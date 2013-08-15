@@ -1,0 +1,16 @@
+<% @all_actions.each do |topic, actions| %>
+  <h1><%= topic %></h1>
+  <table>
+    <% actions.each do |action| %>
+      <tr>
+        <td><b><%= action[:name] %></b></td>
+        <td><%= action[:method] %></td>
+        <td><%= link_to action[:url], action[:url] %></td>
+      </tr>
+      <tr style="font-size: 11px; line-height: 11px;">
+        <td ></td>
+        <td colspan="2"><%= action[:parameters] %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

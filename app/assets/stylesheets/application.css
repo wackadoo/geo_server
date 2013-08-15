@@ -1,0 +1,433 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+
+html {
+  height: 100%;
+}
+
+body {
+  min-width: 480px;
+  
+  background-image: url("/geo_server/assets/background.jpg");
+  padding: 0px;
+  margin: 0px;
+  min-height: 100%;
+  height: 100%;
+  
+  font-family: Helvetica, Arial, Lucida;
+  font-size: 12pt;
+  color: #333;
+}
+
+header.site-header {
+  min-width: 480px;
+  height: 100px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px;
+  border-color: #AAA;
+  border-style: solid;
+  
+  -moz-box-shadow: 0px 3px 2px RGBA(180,180,180,.5);
+  -webkit-box-shadow: 0px 3px 2px RGBA(180,180,180,.5);
+  box-shadow: 0px 3px 2px RGBA(180,180,180,.5);
+  
+  padding: 6px 60px 6px 60px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #FFF), color-stop(1.0, #DDD));
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px;
+}
+
+.push {
+  height: 200px;
+}
+
+.clear {
+  clear: both;
+}
+
+footer.site-footer {
+  clear: both;
+  height: 188px;
+  border-top: 1px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-color: #AAA;
+  border-style: solid;
+  
+  color: #999;
+  
+  -moz-box-shadow:    0px 3px 2px RGBA(180,180,180,.5) inset;
+  -webkit-box-shadow: 0px 3px 2px RGBA(180,180,180,.5) inset;
+  box-shadow:         0px 3px 2px RGBA(180,180,180,.5) inset;
+  
+  padding: 6px 60px 6px 60px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #DDD), color-stop(1.0, #FFF));
+}
+
+section.content {
+  padding: 30px 60px 30px 60px;
+  min-height: 400px;
+}
+
+.site-name {
+  font-size: 24pt;
+  color: #BABABA;
+  text-shadow: rgba(255,255,255,.5) 1px 1px;
+  margin-left: 50px;
+}
+
+.backend-user {
+  float: right;
+}
+
+.charts {
+  position: relative;
+  clear: both;
+}
+
+.chart {
+  float: left;
+}
+
+.chart.large .dygraph-legend {
+  left: 60px !important;
+  width: 530px !important;
+}
+
+nav.site-navigation {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 4px;
+  text-align: right;
+}
+
+nav.site-sub-navigation {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  text-align: right;
+}
+
+nav.backend-user {
+  float: right;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 2px;
+}
+
+.backend-stats th {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #888;
+}
+
+td.center {
+  text-align: center;
+}
+
+
+nav ul {
+  padding: 5px 0px;
+  margin:0px;
+}
+
+nav ul ul {
+  display: inline;
+}
+
+nav ul li {
+  display: inline;
+  text-decoration: none;
+}
+
+td {
+  vertical-align: top;
+}
+
+nav ul li a {
+  color: #888;
+  
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #888;
+  border-radius: 8px;
+  
+  -moz-box-shadow: 1px 1px 1px RGBA(255,255,255,.9), 1px 1px 1px RGBA(0,0,0,.1) inset ;
+  -webkit-box-shadow: 1px 1px 1px RGBA(255,255,255,.9), 1px 1px 1px RGBA(0,0,0,.1) inset ;
+  box-shadow: 1px 1px 1px RGBA(255,255,255,.9), 1px 1px 1px RGBA(0,0,0,.1) inset ;
+  
+  padding: 4px 8px;
+  text-align: center;
+  text-shadow: rgba(255,255,255,.9) 1px 1px;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  
+  -moz-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;
+  -webkit-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;
+  box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset;  
+}
+
+
+nav ul.submenue li a {
+  color: #888;
+  border: none;
+  -moz-box-shadow: none ;
+  -webkit-box-shadow: none ;
+  box-shadow: none ;
+}
+
+nav ul.submenue li a:hover {
+  text-decoration: none;
+  
+  -moz-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;
+  -webkit-box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset ;
+  box-shadow: 2px 2px 2px RGBA(255,255,255,.9), 2px 2px 2px RGBA(0,0,0,.1) inset;  
+}
+
+.inline {
+  display: inline;
+}
+
+.button-on-white {
+  background-color: rgba(255,255,255,0.4);
+  border-style: solid;
+  border-width:  1px;
+  border-color: #777;
+  border-radius: 8px;
+  
+  -moz-box-shadow: -1px -1px 1px RGBA(0,0,0,.2) inset ;
+  -webkit-box-shadow: -1px -1px 1px RGBA(0,0,0,.2) inset ;
+  box-shadow: -1px -1px 1px RGBA(0,0,0,.1) inset;
+
+  text-shadow: rgba(255,255,255,.9) 1px 1px;
+  
+  padding: 4px 8px;
+  text-align: center;
+  text-shadow: rgba(255,255,255,.9) 1px 1px;
+}
+
+
+.button-on-white:hover {
+  text-decoration: none;
+  -moz-box-shadow: 1px 1px 1px RGBA(0,0,0,.1) inset ;
+  -webkit-box-shadow:  1px 1px 1px RGBA(0,0,0,.1) inset ;
+  box-shadow:  1px 1px 1px RGBA(0,0,0,.1) inset;  
+}
+
+
+.battle-info {
+  width: 580px;
+  min-height: 180px;
+  padding: 0px 0px 20px 0px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+table.factions-overview {
+  text-align: left;
+}
+
+
+.red {
+  color: #F00;
+}
+
+.green {
+  color: #0F0;
+}
+
+.orange {
+  color: #FA0;
+}
+
+.round-info {
+  width: 320px;
+  min-height: 80px;
+  padding: 0px 40px 20px 40px;
+  margin-bottom: 20px;
+}
+
+.panel {
+  display: inline-block;
+  color: #777;
+}
+
+.message {
+  border-radius: 10px;
+  border: #777 2px solid;
+}
+
+.message .subject {
+  border-radius: 10px;
+  background-color: #ccc;
+  padding: 10px;
+  font-size: 24px;
+  margin: 0px;
+}
+
+.message .body {
+  margin: 10px;
+}
+
+.panel-border {
+  border-radius: 20px;
+  border: #777 12px solid;
+}
+
+.panel h1 {
+  font-size: 24pt;
+}
+
+tr.announcement-original {
+  font-weight: bold;
+}
+
+div.flash {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  width: 300px;
+  margin-left:-150px;
+  background-color: #777;
+  border-radius: 8px;
+  padding: 10px;
+  color: #FFF;
+  text-align: center;
+  
+  -moz-box-shadow: 1px 1px 1px RGBA(0,0,0,.1) ;
+  -webkit-box-shadow:  1px 1px 1px RGBA(0,0,0,.1) ;
+  box-shadow:  1px 1px 1px RGBA(0,0,0,.1) ;  
+}
+
+div.player-ranking {
+  position: absolute;
+  background-color: #DDF;
+  width: 100%;
+  min-width: 400px;
+  min-height: 100%;
+}
+
+div.player-ranking-pane {
+  background-color: #FFF;
+  width: 860px;
+  min-height: 300px;
+  border-radius: 12px;
+  padding: 10px 30px 80px 30px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.player-ranking-pane td, div.player-ranking-pane th {
+  text-align: left;
+  padding-right: 10px;
+}
+
+div.player-ranking-pane td.number, div.player-ranking-pane th.number {
+  text-align: right;
+}
+
+.formula-error {
+  color: #F00;
+  font-weight: bold;
+}
+
+#environment {
+  position: absolute;
+  width: 300px;
+  height: 24px;
+  border-top: 3px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 3px;
+  border-style: solid;
+  font-size: 20px;
+  font-weight: bold;
+  left: -100px;
+  top: 35px;
+  text-align: center; 
+  -webkit-transform: rotate(-45deg);     
+}
+
+#environment.development {
+  border-color: #0a0;
+  color: #0a0;
+}
+
+#environment.staging {
+  border-color: #cc0;
+  color: #cc0;
+}
+
+#environment.production {
+  border-color: #a00;
+  color: #a00;
+}
+
+div.platinum-account-info {
+  position: absolute;
+  background-color: #DDF;
+  width: 100%;
+  min-height: 100%;
+}
+
+div.platinum-account-info-pane {
+  width: 800px;
+
+  background-color: #FFF;
+  border-radius: 8px;
+  padding: 10px 40px 80px 40px;
+  margin-bottom: 200px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.platinum-account-info-pane img {
+  margin: 0px 30px 40px 0px;
+  height: 200px;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: rgb(153, 153, 153) 1px 2px 3px 2px;
+  float: left;
+}
+
+div.platinum-account-info-pane .feature {
+  clear: both;
+}
+
+.backend-sign-in-log-entries .url {
+  max-width: 500px;
+  overflow: hidden;
+  word-break:break-all;
+  word-wrap:break-word;  
+}
+
+.word-break {
+  word-break:break-all;
+  word-wrap:break-word;  
+}
+
+
+

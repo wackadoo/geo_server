@@ -1,0 +1,13 @@
+<div class="dashboard">
+
+  <div class="profile">
+    <%= gravatar_img_tag_for @backend_user.gravatar_url(:size => 120), :class => 'gravatar-float', :alt => @backend_user.address_informal %>
+  
+    <div class="profile-info">
+      <h1>Hi <%="#{@backend_user.address_informal}" %>.</h1>
+      <p>Your role: <%= (backend_admin? ? '<span class="red">admin</span>' : backend_staff? ? '<span class="orange">staff</span>' : backend_developer? ? 'developer' : backend_parnter? ? "partner" : "none").html_safe %>.
+    </div>
+  </div>
+  
+  <h1>Empty Dashboard...</h1>
+</div>

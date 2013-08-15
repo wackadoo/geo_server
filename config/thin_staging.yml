@@ -1,0 +1,14 @@
+---
+pid: /var/run/geo_server.pid
+timeout: 30
+wait: 30
+log: log/thin/geo_server.log
+max_conns: 1024
+require: []
+
+environment: staging
+max_persistent_conns: 512
+servers: 6
+daemonize: true
+chdir: /var/www/geo_server/current
+socket: /var/run/geo_server.sock

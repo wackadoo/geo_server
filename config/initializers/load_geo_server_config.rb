@@ -1,0 +1,1 @@
+GEO_SERVER_CONFIG = YAML.load_file("#{Rails.root}/config/geo_server.yml")[Rails.env]

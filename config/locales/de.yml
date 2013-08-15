@@ -1,0 +1,117 @@
+# Localization file for German. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+de:
+  
+  datetime:
+    distance_in_words:
+      x_days: 
+        one:   '1 Tag'
+        other: '%{count} Tage'
+      x_minutes: 
+        one:   '1 Minute'
+        other: '%{count} Minuten'
+  
+  application:
+    layout:
+      map_nodes: Knoten
+      map_subtrees: Baum
+      map_locations: Orte
+      map_regions: Regionen
+    military:
+      new_army: Neue Armee
+      neanderthal: Neandertaler
+    settlement:
+      neanderthal: Neandertal
+    messaging:
+      welcome_message:
+        subject: Willkommen bei Wack-a-Doo
+        body: "<h2>Willkommen in der halböffentlichen geschlossenen Erprobungsrunde</h2>\n
+          <p>Mit dieser Runde wollen wir unser Spielsystem und unsere Server testen, und sind sehr gespannt auf Deine Interpretation von Wack-a-Doo.</p>\n
+          <p>Zur besseren Orientierung empfehlen wir Dir die Erklärungen zur Benutzeroberfläche anzuschauen:</p>\n
+          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>\n
+          <p>Dort werden alle wesentlichen Menüfunktionen anhand von Screenshots erklärt.</p>\n
+          <p>Wack-a-Doo befindet sich gerade in der Entwicklungsphase. In dieser Erprobungsrunde werden wir natürlich auftretende Fehler beheben, wollen aber laufend Neuerungen oder Verbesserungen vornehmen. Jede Änderung werden wir entsprechend ankündigen.</p>\n
+          <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>\n
+          <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>\n
+          <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>\n
+          <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in unserem Wiki zusammengefasst:</p>\n
+          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>\n
+          <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>\n
+          <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
+          <p>Das Wack-a-Doo Team</p>\n"
+      battle_report:
+        subject: "Kampfbericht: <%= @battle.region.name %>"
+        title: Kampfbericht
+        initial_sentance: Ein Kampf ist ausgebrochen durch einen Angriff von <%= get_character_name(@battle.initiator) %> auf <%= get_character_name(@battle.opponent) %> zum Zeitpunkt <%= @battle.started_at %>
+        no_rounds: Da es keine Gegenwehr gab, fanden keine Kampfrunden statt.
+        winner_message: Deine Fraktion hat den Kampf gewonnen. 
+        loser_message: Deine Fraktion hat den Kampf verloren.
+        xp: Du erhältst daher %{xp} zusätzliche Erfahrungspunkte.
+        your_army: Deine Armee
+        overview: Übersicht
+        details: Details
+        round: Runde
+        total_army_of_my_faction: Gesamte Armee deiner Fraktion
+        total_army_of_enemy_faction: Armee der feindlichen Fraktion
+        total_damage: Total angerichter Schaden
+        total_lost_unts: Verlorene Einheiten
+        destroyed: "zerstört"
+        dissolved: "aufgelöst"
+        retreated: "zurückgezogen"
+        survived: "hat überlebt"
+        no_units: "keine Einheiten"
+      alliance_application_message:
+        subject: "Allianz Bewerbung"
+        body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
+    shop:
+      platinum_info:
+        title: Platinum Account
+        description1:
+          Der Platinum Account hat eine beschränkte Laufzeit. Du kannst
+          ihn in der Fundgrube jederzeit aktivieren oder einen bereits aktiven Platinum Account verlängern. 
+        description2:
+          Mit dem Platinum Account kannst Du Dir einige Komfortfunktionen freischalten, die wir Dir im
+          Folgenden näher erläutern wollen. 
+        construction:
+          title:
+            Bauschleife
+          description:
+            Der Platinum Account erweitert die Bauschleife um zusätzliche 3 Plätze. Dadurch kannst Du
+            mehr Aufträge gleichzeitig erteilen. Diese werden nach und nach abgearbeitet, auch wenn Du 
+            nicht im Spiel einloggt bist, vorausgesetzt, Du hast genug Ressourcen.
+        training:
+          title:
+            Trainingsschleife
+          description:
+            Die Trainingsschleife wird durch den Platinum Account um drei zusätzliche Plätze erweitert.
+            Du hast dadurch die Möglichkeit, in einem Ausbildungsgebäude weitere Trainingsaufträge zu
+            erteilen, die nach dem ersten ausgeführt werden. 
+        battle_message:
+          title:
+            Kampfbenachrichtigungen per E-Mail
+          description:
+            Mit aktiviertem Platinum Account wirst Du umgehend per E-Mail über Angriffe auf Deine Siedlungen,
+            Festungen und Armeen informiert, wenn Du gerade nicht im Spiel bist. Damit kannst Du direkt auf
+            Eure Gegner reagieren, auch wenn Du Dich nicht gerade im Spiel befunden hast. Du kannst weitere
+            Armeen zur Unterstützung zum Ort des Geschehens beordern oder Deine Allianz um Hilfe ersuchen.
+        like_regeneration:
+          title:
+            Schnellere Regeneration vergebener Likes / Dislikes
+          description:
+            Likes und Dislikes, die Du an andere Spieler vergeben hast, regenerieren sich doppelt so schnell,
+            sobald der Platinum Account aktiviert ist. Du kannst also mehr Spielern pro Tag Deine Zu- oder
+            Abneigung ausdrücken.
+        message_archive:
+          title:
+            Nachrichten-Archiv
+          description:
+            Gelesene Nachrichten aus der Inbox und alle Nachrichten aus der Outbox werden nach 14 Tagen gelöscht. Mit
+            dem Platinum erhälst Du zusätzlich eine Archivbox, in die Du wichtige Nachrichten verschieben kannst, damit
+            sie dauerhaft gespeichert werden.
+        footer:
+          Wir werden den Platinum Account noch ausbauen. Es werden mit der Zeit weitere Komfortfunktionen
+          folgen, die wir Dir dann natürlich direkt zusätzlich freischalten werden.
+          
+          
+
