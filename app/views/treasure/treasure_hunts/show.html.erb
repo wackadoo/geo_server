@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @treasure_treasure_hunt.category %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @treasure_treasure_hunt.level %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @treasure_treasure_hunt.latitude %>
+</p>
+
+<p>
+  <b>Longitutde:</b>
+  <%= @treasure_treasure_hunt.longitutde %>
+</p>
+
+<p>
+  <b>Difficulty:</b>
+  <%= @treasure_treasure_hunt.difficulty %>
+</p>
+
+<p>
+  <b>Geo character:</b>
+  <%= @treasure_treasure_hunt.geo_character_id %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%= @treasure_treasure_hunt.distance %>
+</p>
+
+<p>
+  <b>Success:</b>
+  <%= @treasure_treasure_hunt.success %>
+</p>
+
+<p>
+  <b>Treasure:</b>
+  <%= @treasure_treasure_hunt.treasure_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_treasure_treasure_hunt_path(@treasure_treasure_hunt) %> |
+<%= link_to 'Back', treasure_treasure_hunts_path %>
