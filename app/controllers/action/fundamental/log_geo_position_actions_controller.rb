@@ -8,8 +8,7 @@ class Action::Fundamental::LogGeoPositionActionsController < ApplicationControll
 
     if params[:log_geo_position_action].nil? ||
         params[:log_geo_position_action][:longitude].blank? ||
-        params[:log_geo_position_action][:latitude].blank? ||
-        params[:log_geo_position_action][:character_id].blank?
+        params[:log_geo_position_action][:latitude].blank?
       raise BadRequestError.new('missing params')
     end
 
