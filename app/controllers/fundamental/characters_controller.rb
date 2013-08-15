@@ -1,4 +1,7 @@
 class Fundamental::CharactersController < ApplicationController
+
+  layout 'fundamental'
+
   # GET /fundamental/characters
   # GET /fundamental/characters.json
   def index

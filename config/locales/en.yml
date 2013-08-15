@@ -10,9 +10,11 @@ en:
         category: Backend
         dashboard: Dashboard
         users: Users
-      character:
-        category: Character
-        geo_positions: GeoPositions
+      fundamental:
+        category: Fundamental
+        characters: Characters
+        positions: Positions
+        stats: Daily Stats
 
   sessions:
     signup:

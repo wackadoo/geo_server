@@ -1,4 +1,7 @@
 class Fundamental::DailyPositionStatsController < ApplicationController
+  
+  layout 'fundamental'
+  
   # GET /fundamental/daily_position_stats
   # GET /fundamental/daily_position_stats.json
   def index
