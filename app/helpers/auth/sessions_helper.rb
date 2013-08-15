@@ -102,7 +102,7 @@ module Auth
     # True, in case the present visitor has logged-in providing valid 
     # credentials of a registered identity. 
     def signed_in?
-      !current_character.nil? && !current_character.banned?
+      !current_character.nil? && !current_character.deleted?
     end
     
     # Sets the current_identity to the given identity.
