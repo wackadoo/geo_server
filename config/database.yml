@@ -23,7 +23,7 @@ staging:      # use the local postgres db
   encoding: UTF8
   database: geo_server
   port: 5686
-  username: run-gs
+  username: run-ge
 
 
 production:   # use the postgres on the database server
@@ -32,6 +32,6 @@ production:   # use the postgres on the database server
   database: geo_server
   host: gs02.wack-a-doo.de
   port: 5432
-  username: run-gs
+  username: run-ge
 # password:
 

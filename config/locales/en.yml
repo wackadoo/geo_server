@@ -10,219 +10,23 @@ en:
         category: Backend
         dashboard: Dashboard
         users: Users
-        partner_sites: Partner Sites
-        stats: Stats
-        sign_in_log: Sign-Ins
-        tutorial_stats: Tutorial Stats
-        browser_stats: Browser
-        system_message: InGameMessage
-        trade_log: TradeLog
-        user_content_reports: UserContentReports
-      rules:
-        category: Rules
-        all: All
-        resources: Resources
-        units: Units
-        sciences: Sciences
-      ranking:
-        category: Ranking
-        info: Ranking Info
-        character: Character Ranking
-        alliance: Alliance Ranking
-        fortress: Fortress Ranking
-      action:
-        category: Action
-      fundamental:
-        category: Fundamental
-        round_info: Round Info
-        resource_pools: Resources
-        characters: Characters
-        alliances: Alliances
-        victory_progress: Victory Progress
-        guilds: Guilds
-        alliance_shouts: Ally-Shouts
-        alliance_reservations: Ally-Reservations
-        announcements: Announcements
-        artifacts: Artifacts
-        artifact_initiations: Art. Initiations
-        settings: Settings
-        retention_mails: Retention Mails
-        gossip: Gossip
-      messaging:
-        category: Messaging
-        inboxes: Inboxes
-        outboxes: Outboxes
-        archives: Archives
-        reported: Abuse
-        jabbercommands: Jabber Commands
-      map:
-        category: Map
-        nodes: Nodes
-        subtree: Tree
-        locations: Locations
-        regions: Regions
-      settlement:
-        category: Settlement
-        settlements: All
-        slots: Slots
-        history: History Events
-      construction:
-        category: Construction
-        queues: Queues
-        jobs: Jobs
-        active_jobs: Act. Jobs
-      assignment:
-        category:  Assignment
-        standard:  Standard
-        special:   Special
-        frequency: Frequency
+      character:
+        category: Character
+        geo_positions: GeoPositions
 
-      military:
-        category: Military
-        armies: Armies
-        new_army: New Army
-        army_details: A.Details
-        battles: Battles
-        rounds: Rounds
-        battle_factions: Factions
-        battle_faction_results: F.Results
-        participants: Participants
-        participant_results: P.Results
-        character_results: Char.Results
-      training:
-        category: Training
-        queues: Queues
-        jobs: Jobs
-        active_jobs: Act. Jobs
-      effect:
-        alliance_construction_effects: Ally Construction
-        construction_effects: Construction
-        alliance_resource_effects: Alliance Res. Effects
-        resource_effects: Character Res. Effects
-        category: Effect
-      event:
-        category: Event
-        events: Events
-        notifications: Notifications
-      shop:
-        category: Shop
-        purchases: Purchases
-        resource_offers: Resource Offers
-        bonus_offers: Bonus Offers
-        platinum_offers: Platinum Offers
-        transactions: Ingame Transactions
-        special_offers: Special Offers
-        special_offers_transactions: Special Offers Transactions
-        credit_transactions: Bytro Credit Transactions
-        money_transactions: Bytro Money Transactions
-      tutorial:
-        category: Tutorial
-        tutorial: Tutorial
-        states: States
-        quests: Quests
-      like_system:
-        category: LikeSystem
-        likes: Likes
-        dislikes: Dislikes
-    military:
-      new_army: New Army
-      neanderthal: Neanderthal
-    settlement:
-      neanderthal: Neanderthal
-    messaging:
-      welcome_message:
-        subject: Welcome to Wack-a-Doo
-        body: "<h2>Welcome to the half-offical testround of Wack-a-Doo</h2>\n
-          <p>With this round we will be testing our software and our servers. Nevertheless, we hope you'll enjoy playing Wack-a-Doo.</p>\n
-          <p>Presently, there's no tutorial. To get started, please have a look at these screenshots explaining the interface:</p>\n
-          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/User_Interface' target='_blank'>http://wiki.wack-a-doo.de/User_Interface</a></p>\n
-          <p>Wack-a-Doo is still under construction. In this testround we will fix bugs on the fly, and also introduce new features while you're playing. So please expect changes and more interesting stuff to come.</p>\n
-          <p>We would be pleased to get your feedback, either via email or by posting in the forum (German):</p>\n
-          <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>\n
-          <p>A more detailed description of game mechanics and attributes of buildings and units can be found in our wiki (presently only in German):</p>\n
-          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com' target='_blank'>http://wiki.wack-a-doo.com</a></p>\n
-          <p>We wish you a pleasent time in Wack-a-Doo.</p>\n
-          <p>The Wack-a-Doo Team</p>\n"
-      battle_report:
-        subject: "The battle at <%= @battle.region.name %>"
-        title: "The battle at <%= @battle.region.name %>"
-        initial_sentance: This conflict was initiated by an attack of <%= get_character_name(@battle.initiator) %> on <%= get_character_name(@battle.opponent) %> on <%= @battle.started_at %>
-        winner_message: Your faction won the battle. 
-        loser_message: Your faction lost the battle.
-        xp: You got %{xp} additional experience points.
-        your_army: Your Army
-        overview: Overview
-        details: Details
-        round: Round
-        total_army_of_my_faction: Full army of your faction
-        total_army_of_enemy_faction: Full army of the enemy faction
-        total_damage: Total damage dealt
-        total_lost_unts: Units lost
-        dissolved: disbanded
-        destroyed: "destroyed"
-        retreated: "retreated"
-        survived: "survived"   
-        no_units: "no units" 
-      alliance_application_message:
-        subject: "Alliance Application"
-        body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
-    shop:
-      platinum_info:
-        title: Platinum Account
-        description1:
-          The platinum account has a limited duration. You can activate it in the repository at any moment or extend an already active platinum account.
-        description2:
-          With the platinum account you can unlock several comfort features which we would like to explain below in more detail.
-        construction:
-          title:
-            Construction Loop
-          description:
-            The platinum account expands the construction loop over 3 additional places. They are processed on and on even when you are not logged into the game, provided that you have enough resources.
-        training:
-          title:
-            Training Loop
-          description:
-            The training loop is expanded over three additional places with platinum account. By this means you have the opportunity to accept further training contracts in the same training construction, after the first contract is over.
-        battle_message:
-          title:
-            Combat Notifications per E-Mail
-          description:
-            With an enabled platinum account you will be immediately notified of attacks on your colonies, fortresses, or armies per e-mail when you are not in the game at the moment. So even if you are not currently playing, you can immediately react to your opponents. You can send for further armies to assist you in the secene or request your alliance for help.
-        message_archive:
-          title:
-            Message Archive
-          description:
-            Gelesene Nachrichten aus der Inbox und alle Nachrichten aus der Outbox werden nach 14 Tagen gelöscht. Mit dem
-            Platinum erhälst Du zusätzlich eine Archivbox, in die Du Nachrichten verschieben und dauerhaft speichern
-            kannst.
-        like_regeneration:
-          title:
-            Faster Regeneration of the given Likes / Dislikes
-          description:
-            As soon as the platinum account is enabled, the likes and disklikes that you give to other players are regenerated with a doubled speed. So you can express your like/dislike to more players per day.
-        footer:
-          We will still improve the platinum account. More comfort features will follow by time, which we will of course enable for you immediately.
-        
-        
   sessions:
-        
     signup:
       user_created: User created successfully
-
     signin:
       title: Sign In
-      
       heading: Sign In - Staff
       form:
         login: Login
         password: Password
         submit_button: Sign In
-                
       flash:
         invalid: Invalid login/password combination.
-        
     authorization:
       access_denied:
         admin: "The page you requested may only be accessed by admins."
         staff: "The page you requested may only be accessed by staff."
-
