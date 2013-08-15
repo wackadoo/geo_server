@@ -135,8 +135,12 @@ module Auth
       raise BearerAuthInvalidToken.new('Access token expired.') if request_access_token.expired?
       raise BearerAuthInsufficientScope.new('Requested resource is not in authorized scope.') unless request_access_token.in_scope?(GEO_SERVER_CONFIG['scope'])
   
-      character = Fundamental::Character.find_by_identifier(request_access_token.identifier)
-      character.update_last_request_at   unless character.nil?
+      character = Fundamental::Character.find_or_create_by_identifier(request_access_token.identifier)
+
+      # fetch character from game server if not existing in geo server
+      #character = Fundamental::Character.find_by_identifier(request_access_token.identifier)
+
+      #character.update_last_request_at   unless character.nil?
       character
     end
   
