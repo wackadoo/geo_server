@@ -4,7 +4,7 @@ class CreateTreasureTreasures < ActiveRecord::Migration
       t.integer :category
       t.integer :level,        :null => false, :default => 0
       t.decimal :latitude
-      t.decimal :longitutde
+      t.decimal :longitude
       t.integer :difficulty,   :null => false, :default => 0
 
       t.timestamps

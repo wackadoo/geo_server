@@ -4,8 +4,8 @@ class CreateTreasureTreasureHunts < ActiveRecord::Migration
       t.integer :category
       t.integer :level,           :null => false, :default => 0
       t.decimal :latitude
-      t.decimal :longitutde
-      t.integer :difficulty,      :null => false, :default => false
+      t.decimal :longitude
+      t.integer :difficulty,      :null => false, :default => 0
       t.integer :geo_character_id
       t.integer :distance
       t.boolean :success,         :null => false, :default => false

@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20130815203549) do
     t.integer  "category"
     t.integer  "level",            :default => 0,     :null => false
     t.decimal  "latitude"
-    t.decimal  "longitutde"
+    t.decimal  "longitute"
     t.integer  "difficulty",       :default => 0,     :null => false
     t.integer  "geo_character_id"
     t.integer  "distance"
