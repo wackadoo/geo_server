@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815174137) do
+ActiveRecord::Schema.define(:version => 20130815180338) do
 
   create_table "backend_users", :force => true do |t|
     t.string   "email"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20130815174137) do
     t.boolean  "suspect",          :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "day"
   end
 
 end
