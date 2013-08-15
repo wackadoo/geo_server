@@ -1,0 +1,33 @@
+<h1>Listing fundamental_character_positions</h1>
+
+<table>
+  <tr>
+    <th>Geo character</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th>Delta</th>
+    <th>Suspect</th>
+    <th>Remote ip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_character_positions.each do |fundamental_character_position| %>
+  <tr>
+    <td><%= fundamental_character_position.geo_character_id %></td>
+    <td><%= fundamental_character_position.longitude %></td>
+    <td><%= fundamental_character_position.latitude %></td>
+    <td><%= fundamental_character_position.delta %></td>
+    <td><%= fundamental_character_position.suspect %></td>
+    <td><%= fundamental_character_position.remote_ip %></td>
+    <td><%= link_to 'Show', fundamental_character_position %></td>
+    <td><%= link_to 'Edit', edit_fundamental_character_position_path(fundamental_character_position) %></td>
+    <td><%= link_to 'Destroy', fundamental_character_position, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Character position', new_fundamental_character_position_path %>

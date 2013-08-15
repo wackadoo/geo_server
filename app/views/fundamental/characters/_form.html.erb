@@ -1,0 +1,77 @@
+<%= form_for(@fundamental_character) do |f| %>
+  <% if @fundamental_character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_character.errors.count, "error") %> prohibited this fundamental_character from being saved:</h2>
+
+      <ul>
+      <% @fundamental_character.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted %><br />
+    <%= f.check_box :deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :location_updated_at %><br />
+    <%= f.datetime_select :location_updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :distance_today %><br />
+    <%= f.text_field :distance_today %>
+  </div>
+  <div class="field">
+    <%= f.label :distance_total %><br />
+    <%= f.text_field :distance_total %>
+  </div>
+  <div class="field">
+    <%= f.label :premium_ended_at %><br />
+    <%= f.datetime_select :premium_ended_at %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude_bias %><br />
+    <%= f.text_field :longitude_bias %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude_bias %><br />
+    <%= f.text_field :latitude_bias %>
+  </div>
+  <div class="field">
+    <%= f.label :bias_enabled %><br />
+    <%= f.check_box :bias_enabled %>
+  </div>
+  <div class="field">
+    <%= f.label :privacy_mode %><br />
+    <%= f.number_field :privacy_mode %>
+  </div>
+  <div class="field">
+    <%= f.label :geo_enabled %><br />
+    <%= f.check_box :geo_enabled %>
+  </div>
+  <div class="field">
+    <%= f.label :geo_setting_changed_at %><br />
+    <%= f.datetime_select :geo_setting_changed_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

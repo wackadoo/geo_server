@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  geo_character_id: 1
+  longitude: 9.99
+  latitude: 9.99
+  delta: 1
+  suspect: false
+  remote_ip: MyString
+
+two:
+  geo_character_id: 1
+  longitude: 9.99
+  latitude: 9.99
+  delta: 1
+  suspect: false
+  remote_ip: MyString

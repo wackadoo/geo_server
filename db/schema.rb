@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814142831) do
+ActiveRecord::Schema.define(:version => 20130815174137) do
 
   create_table "backend_users", :force => true do |t|
     t.string   "email"
@@ -25,6 +25,48 @@ ActiveRecord::Schema.define(:version => 20130814142831) do
     t.string   "surname"
     t.string   "login"
     t.boolean  "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_character_positions", :force => true do |t|
+    t.integer  "geo_character_id"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
+    t.integer  "delta",            :default => 0,     :null => false
+    t.boolean  "suspect",          :default => false, :null => false
+    t.string   "remote_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_characters", :force => true do |t|
+    t.integer  "character_id"
+    t.string   "identifier"
+    t.boolean  "deleted",                :default => false, :null => false
+    t.decimal  "longitude"
+    t.decimal  "latitude"
+    t.datetime "location_updated_at"
+    t.decimal  "distance_today",         :default => 0.0,   :null => false
+    t.decimal  "distance_total",         :default => 0.0,   :null => false
+    t.datetime "premium_ended_at"
+    t.decimal  "longitude_bias",         :default => 0.0,   :null => false
+    t.decimal  "latitude_bias",          :default => 0.0,   :null => false
+    t.boolean  "bias_enabled",           :default => true,  :null => false
+    t.integer  "privacy_mode",           :default => 5,     :null => false
+    t.boolean  "geo_enabled",            :default => true,  :null => false
+    t.datetime "geo_setting_changed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_daily_position_stats", :force => true do |t|
+    t.integer  "geo_character_id"
+    t.decimal  "distance",         :default => 0.0,   :null => false
+    t.integer  "reports",          :default => 0,     :null => false
+    t.integer  "max_vel",          :default => 0,     :null => false
+    t.boolean  "geo_enabled"
+    t.boolean  "suspect",          :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
