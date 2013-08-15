@@ -1,4 +1,5 @@
 GeoServer::Application.routes.draw do
+
   scope "/geo_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -12,6 +13,13 @@ GeoServer::Application.routes.draw do
         resources :daily_position_stats
         resources :character_positions
       end
+
+      namespace :treasure do 
+        resources :treasures
+        resources :treasure_hunts 
+      end
+
+
 
       namespace :action do
         namespace :fundamental do

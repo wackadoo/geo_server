@@ -1,0 +1,12 @@
+<% content_for :backend_links do %> 
+ <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.treasure.treasures"), treasure_treasures_path %></li>
+    <li><%= link_to I18n.translate("application.layout.treasure.treasure_hunts"),  treasure_treasure_hunts_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:action_content) ? yield(:action_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

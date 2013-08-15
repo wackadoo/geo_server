@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815180338) do
+ActiveRecord::Schema.define(:version => 20130815203549) do
 
   create_table "backend_users", :force => true do |t|
     t.string   "email"
@@ -70,6 +70,30 @@ ActiveRecord::Schema.define(:version => 20130815180338) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "day"
+  end
+
+  create_table "treasure_treasure_hunts", :force => true do |t|
+    t.integer  "category"
+    t.integer  "level",            :default => 0,     :null => false
+    t.decimal  "latitude"
+    t.decimal  "longitutde"
+    t.integer  "difficulty",       :default => 0,     :null => false
+    t.integer  "geo_character_id"
+    t.integer  "distance"
+    t.boolean  "success",          :default => false, :null => false
+    t.integer  "treasure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "treasure_treasures", :force => true do |t|
+    t.integer  "category"
+    t.integer  "level",      :default => 0, :null => false
+    t.decimal  "latitude"
+    t.decimal  "longitutde"
+    t.integer  "difficulty", :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

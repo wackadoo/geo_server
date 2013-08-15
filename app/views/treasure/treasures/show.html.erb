@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @treasure_treasure.category %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @treasure_treasure.level %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @treasure_treasure.latitude %>
+</p>
+
+<p>
+  <b>Longitutde:</b>
+  <%= @treasure_treasure.longitutde %>
+</p>
+
+<p>
+  <b>Difficulty:</b>
+  <%= @treasure_treasure.difficulty %>
+</p>
+
+
+<%= link_to 'Edit', edit_treasure_treasure_path(@treasure_treasure) %> |
+<%= link_to 'Back', treasure_treasures_path %>

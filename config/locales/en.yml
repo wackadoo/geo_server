@@ -15,6 +15,10 @@ en:
         characters: Characters
         positions: Positions
         stats: Daily Stats
+      treasure:
+        category: Treasure
+        treasures: Treasures
+        treasure_hunts: Hunts
 
   sessions:
     signup:
