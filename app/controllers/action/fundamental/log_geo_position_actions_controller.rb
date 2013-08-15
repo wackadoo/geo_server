@@ -15,6 +15,7 @@ class Action::Fundamental::LogGeoPositionActionsController < ApplicationControll
     geo_position = Fundamental::CharacterPosition.find_or_initialize_by_character_id(params[:log_geo_position_action][:character_id])
     geo_position.longitude = params[:log_geo_position_action][:longitude]
     geo_position.latitude =  params[:log_geo_position_action][:latitude]
+    geo_position.location_updated_at = Time.now
     geo_position.save
 
     respond_to do |format|
