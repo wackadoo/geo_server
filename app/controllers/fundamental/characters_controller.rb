@@ -1,6 +1,8 @@
 class Fundamental::CharactersController < ApplicationController
-
   layout 'fundamental'
+
+  before_filter :authenticate, :except => [:show, :self]
+  before_filter :deny_api,     :except => [:show, :index, :self]
 
   # GET /fundamental/characters
   # GET /fundamental/characters.json
@@ -23,6 +25,18 @@ class Fundamental::CharactersController < ApplicationController
       format.json { render json: @fundamental_character }
     end
   end
+
+  # GET /fundamental/characters/1
+  # GET /fundamental/characters/1.json
+  def self
+    @fundamental_character = current_character
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @fundamental_character }
+    end
+  end
+
 
   # GET /fundamental/characters/new
   # GET /fundamental/characters/new.json
