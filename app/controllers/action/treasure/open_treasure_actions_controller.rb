@@ -4,7 +4,7 @@ class Action::Treasure::OpenTreasureActionsController < ApplicationController
   before_filter :authenticate
 
   def create
-    raise BadRequestError.new('no treasure id sent') if params[:id].blank?
+    raise BadRequestError.new('no treasure id sent')  if params[:id].blank?
     raise BadRequestError.new('no character id sent') if params[:identifier].blank?
     
     @character = Fundamental::Character.find_by_identifier(params[:identifier])
