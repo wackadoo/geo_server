@@ -1,0 +1,29 @@
+<%= form_for(@character_geo_position) do |f| %>
+  <% if @character_geo_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@character_geo_position.errors.count, "error") %> prohibited this character_geo_position from being saved:</h2>
+
+      <ul>
+      <% @character_geo_position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

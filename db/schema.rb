@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814142831) do
+ActiveRecord::Schema.define(:version => 20130815103216) do
 
   create_table "backend_users", :force => true do |t|
     t.string   "email"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20130814142831) do
     t.string   "surname"
     t.string   "login"
     t.boolean  "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "character_geo_positions", :force => true do |t|
+    t.integer  "character_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

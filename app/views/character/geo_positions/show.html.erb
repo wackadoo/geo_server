@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @character_geo_position.character_id %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @character_geo_position.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @character_geo_position.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_geo_position_path(@character_geo_position) %> |
+<%= link_to 'Back', character_geo_positions_path %>

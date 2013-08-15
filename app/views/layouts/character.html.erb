@@ -1,0 +1,11 @@
+<% content_for :character_links do %>
+ <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.character.geo_positions"), geo_positions_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:action_content) ? yield(:action_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>
