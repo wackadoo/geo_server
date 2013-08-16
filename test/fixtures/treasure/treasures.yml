@@ -4,12 +4,12 @@ one:
   category: 1
   level: 1
   latitude: 9.99
-  longitutde: 9.99
+  longitude: 9.99
   difficulty: 1
 
 two:
   category: 1
   level: 1
   latitude: 9.99
-  longitutde: 9.99
+  longitude: 9.99
   difficulty: 1
