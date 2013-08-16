@@ -146,8 +146,8 @@ module Auth
         if response.code == 200
           gs_character = response.parsed_response
           character = Fundamental::Character.create({
-            id:         gs_character['id'],
-            identifier: request_access_token.identifier,
+            character_id: gs_character['id'],
+            identifier:   request_access_token.identifier,
           })
         end
       end
