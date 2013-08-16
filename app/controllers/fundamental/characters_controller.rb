@@ -54,7 +54,7 @@ class Fundamental::CharactersController < ApplicationController
        
         longitude = current_character.longitude
         latitude  = current_character.latitude
-        n         = 10
+        num       = 10
         raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan?
         raise BadRequestError.new('langitude had the wrong format') if latitude.nan?
         raise BadRequestError.new('n had the wrong format') if num <= 0
