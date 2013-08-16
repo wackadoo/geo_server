@@ -142,7 +142,7 @@ module Auth
       # fetch character from game server if not existing in geo server
       if character.nil?
         game_server_access = GameServer::Access.new({game_server_base_url: GEO_SERVER_CONFIG['game_server_base_url']})
-        response = game_server_access.fetch_fundamental_character_self(request_access_token)
+        response = game_server_access.fetch_fundamental_character_self(request_access_token.token)
         if response.code == 200
           gs_character = response.parsed_response
           character = Fundamental::Character.create({
