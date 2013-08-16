@@ -17,9 +17,9 @@ class Fundamental::CharactersController < ApplicationController
        num = params[:n].to_i
        logger.debug("longitude=#{longitude}, latitude=#{latitude}, n=#{num}")
        #TODO check for radian/grad range
-       raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan?
-       raise BadRequestError.new('langitude had the wrong format') if latitude.nan?
-       raise BadRequestError.new('n had the wrong format') if num <= 0
+       raise BadRequestError.new('longitude had the wrong format') if longitude.nan?
+       raise BadRequestError.new('latitude had the wrong format') if latitude.nan?
+       raise BadRequestError.new('num had the wrong format') if num <= 0
        #TODO exchange with real calc (with cos)
        whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL)"
        whereHash = Hash.new
@@ -34,7 +34,7 @@ class Fundamental::CharactersController < ApplicationController
        longitude = params[:longitude].to_f
        latitude = params[:latitude].to_f
        range = params[:range].to_f
-       raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan? || latitude.nan?
+       raise BadRequestError.new('longitude or latitude had the wrong format') if longitude.nan? || latitude.nan?
        raise BadRequestError.new('range had the wrong format') if range <= 0.0
        whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL) AND (((longitude- :longitude)*(longitude- :longitude)) + ((latitude- :latitude)*(latitude- :latitude))) <= (:range * :range)"
        whereHash = {:latitude => latitude, :longitude => longitude, :range => range}
@@ -47,7 +47,7 @@ class Fundamental::CharactersController < ApplicationController
      elsif (params.has_key?(:longitude) || params.has_key?(:latitude) || params.has_key?(:range) || params.has_key?(:n))
      
        raise BadRequestError.new('missing longitude') unless params.has_key?(:longitude)
-       raise BadRequestError.new('missing langitude') unless params.has_key?(:latitude) 
+       raise BadRequestError.new('missing latitude') unless params.has_key?(:latitude)
        raise BadRequestError.new('missing n or range')
      
      elsif !current_character.nil?
@@ -55,8 +55,8 @@ class Fundamental::CharactersController < ApplicationController
         longitude = current_character.longitude 
         latitude  = current_character.latitude
         num       = 10
-        raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nil? || longitude.nan?
-        raise BadRequestError.new('langitude had the wrong format') if latitude.nil? || latitude.nan?
+        raise BadRequestError.new('longitude had the wrong format') if longitude.nil? || longitude.nan?
+        raise BadRequestError.new('latitude had the wrong format') if latitude.nil? || latitude.nan?
         raise BadRequestError.new('n had the wrong format') if num <= 0
         #TODO exchange with real calc (with cos)
         whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL)"
