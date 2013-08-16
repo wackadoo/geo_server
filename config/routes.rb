@@ -25,6 +25,9 @@ GeoServer::Application.routes.draw do
         namespace :fundamental do
           resources :log_geo_position_actions, :only => [ :create ]
         end
+        namespace :treasure do
+          resources :open_treasure_actions,    :only => [ :create ]
+        end
       end
 
       resource :action, :only => [ :show ]
