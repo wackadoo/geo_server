@@ -7,7 +7,69 @@ class Fundamental::CharactersController < ApplicationController
   # GET /fundamental/characters
   # GET /fundamental/characters.json
   def index
-    @fundamental_characters = Fundamental::Character.all
+    
+    @fundamental_characters = nil
+    
+    if (params.has_key?(:longitude) && params.has_key?(:latitude) && !params.has_key?(:range) && params.has_key?(:n)) 
+       
+       longitude = params[:longitude].to_f
+       latitude = params[:latitude].to_f
+       num = params[:n].to_i
+       logger.debug("longitude=#{longitude}, latitude=#{latitude}, n=#{num}")
+       #TODO check for radian/grad range
+       raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan?
+       raise BadRequestError.new('langitude had the wrong format') if latitude.nan?
+       raise BadRequestError.new('n had the wrong format') if num <= 0
+       #TODO exchange with real calc (with cos)
+       whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL)"
+       whereHash = Hash.new
+       #if !current_character.nil?
+       #   whereStr += " AND user_id != :userid"
+       #  whereHash[:userid] = current_user.id;
+       #end
+       @fundamental_characters = Fundamental::Character.where(whereStr, whereHash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num);
+    
+     elsif (params.has_key?(:longitude) && params.has_key?(:latitude) && params.has_key?(:range)) 
+    
+       longitude = params[:longitude].to_f
+       latitude = params[:latitude].to_f
+       range = params[:range].to_f
+       raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan? || latitude.nan?
+       raise BadRequestError.new('range had the wrong format') if range <= 0.0
+       whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL) AND (((longitude- :longitude)*(longitude- :longitude)) + ((latitude- :latitude)*(latitude- :latitude))) <= (:range * :range)"
+       whereHash = {:latitude => latitude, :longitude => longitude, :range => range}
+       # if !current_user.nil?
+       #   whereStr += " AND user_id != :userid"
+       #   whereHash[:userid] = current_user.id;
+       # end
+       @fundamental_characters = Fundamental::Character.where(whereStr, whereHash)
+       
+     elsif (params.has_key?(:longitude) || params.has_key?(:latitude) || params.has_key?(:range) || params.has_key?(:n))
+     
+       raise BadRequestError.new('missing longitude') unless params.has_key?(:longitude)
+       raise BadRequestError.new('missing langitude') unless params.has_key?(:latitude) 
+       raise BadRequestError.new('missing n or range')
+     
+     elsif !current_character.nil?
+       
+        longitude = current_character.longitude
+        latitude  = current_character.latitude
+        n         = 10
+        raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan?
+        raise BadRequestError.new('langitude had the wrong format') if latitude.nan?
+        raise BadRequestError.new('n had the wrong format') if num <= 0
+        #TODO exchange with real calc (with cos)
+        whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL)"
+        whereHash = Hash.new
+        #if !current_character.nil?
+        #   whereStr += " AND user_id != :userid"
+        #  whereHash[:userid] = current_user.id;
+        #end
+        @fundamental_characters = Fundamental::Character.where(whereStr, whereHash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num);
+       
+     else
+       @fundamental_characters = Fundamental::Character.all
+     end
 
     respond_to do |format|
       format.html # index.html.erb
