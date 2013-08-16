@@ -7,6 +7,8 @@ defaults: &defaults
   scope:                'wackadoo'
 
   cookie_name:          'ge_remember_token'
+
+  recently_updated_interval:  60 #minutes
   
 development:
   <<: *defaults
