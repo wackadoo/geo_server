@@ -128,13 +128,6 @@ module Auth
     end
   
     def character_from_access_token
-
-      if !request_access_token.nil?
-        logger.debug "---> auth token #{request_access_token.identifier}"
-      else
-        logger.debug "---> auth token ---"
-      end
-
       raise BearerAuthInvalidRequest.new('Multiple access tokens sent within one request.') if !valid_authorization_header?
       return nil if request_access_token.nil?
     
