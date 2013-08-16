@@ -28,8 +28,9 @@
   <nav class="site-navigation">  
   <% if signed_in_to_backend? && (backend_staff? || backend_developer?) %>
     <ul>
-      <li><%= link_to I18n.translate("application.layout.backend.category"), backend_dashboard_path %></li>
-      <li><%= link_to I18n.translate("application.layout.character.category"), character_geo_positions_path %></li>
+      <li><%= link_to I18n.translate("application.layout.backend.category"),     backend_dashboard_path %></li>
+      <li><%= link_to I18n.translate("application.layout.fundamental.category"), fundamental_characters_path %></li>
+      <li><%= link_to I18n.translate("application.layout.treasure.category"),    treasure_treasures_path %></li>
     </ul>
   <% end %>
   </nav>

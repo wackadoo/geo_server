@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Character:</b>
+  <%= @fundamental_character.character_id %>
+</p>
+
+<p>
+  <b>Identifier:</b>
+  <%= @fundamental_character.identifier %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @fundamental_character.deleted %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @fundamental_character.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @fundamental_character.latitude %>
+</p>
+
+<p>
+  <b>Location updated at:</b>
+  <%= @fundamental_character.location_updated_at %>
+</p>
+
+<p>
+  <b>Distance today:</b>
+  <%= @fundamental_character.distance_today %>
+</p>
+
+<p>
+  <b>Distance total:</b>
+  <%= @fundamental_character.distance_total %>
+</p>
+
+<p>
+  <b>Premium ended at:</b>
+  <%= @fundamental_character.premium_ended_at %>
+</p>
+
+<p>
+  <b>Longitude bias:</b>
+  <%= @fundamental_character.longitude_bias %>
+</p>
+
+<p>
+  <b>Latitude bias:</b>
+  <%= @fundamental_character.latitude_bias %>
+</p>
+
+<p>
+  <b>Bias enabled:</b>
+  <%= @fundamental_character.bias_enabled %>
+</p>
+
+<p>
+  <b>Privacy mode:</b>
+  <%= @fundamental_character.privacy_mode %>
+</p>
+
+<p>
+  <b>Geo enabled:</b>
+  <%= @fundamental_character.geo_enabled %>
+</p>
+
+<p>
+  <b>Geo setting changed at:</b>
+  <%= @fundamental_character.geo_setting_changed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_character_path(@fundamental_character) %> |
+<%= link_to 'Back', fundamental_characters_path %>

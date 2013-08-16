@@ -1,0 +1,41 @@
+<%= form_for(@fundamental_daily_position_stat) do |f| %>
+  <% if @fundamental_daily_position_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_daily_position_stat.errors.count, "error") %> prohibited this fundamental_daily_position_stat from being saved:</h2>
+
+      <ul>
+      <% @fundamental_daily_position_stat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :geo_character_id %><br />
+    <%= f.number_field :geo_character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :distance %><br />
+    <%= f.text_field :distance %>
+  </div>
+  <div class="field">
+    <%= f.label :reports %><br />
+    <%= f.number_field :reports %>
+  </div>
+  <div class="field">
+    <%= f.label :max_vel %><br />
+    <%= f.number_field :max_vel %>
+  </div>
+  <div class="field">
+    <%= f.label :geo_enabled %><br />
+    <%= f.check_box :geo_enabled %>
+  </div>
+  <div class="field">
+    <%= f.label :suspect %><br />
+    <%= f.check_box :suspect %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 require 'five_d/access_token'
+require 'game_server/access'
+
 module Auth
   
   # Contains helpers for establishing and tracking a BACKEND session as well
@@ -102,7 +104,7 @@ module Auth
     # True, in case the present visitor has logged-in providing valid 
     # credentials of a registered identity. 
     def signed_in?
-      !current_character.nil? && !current_character.banned?
+      !current_character.nil? && !current_character.deleted?
     end
     
     # Sets the current_identity to the given identity.
@@ -136,7 +138,20 @@ module Auth
       raise BearerAuthInsufficientScope.new('Requested resource is not in authorized scope.') unless request_access_token.in_scope?(GEO_SERVER_CONFIG['scope'])
   
       character = Fundamental::Character.find_by_identifier(request_access_token.identifier)
-      character.update_last_request_at   unless character.nil?
+
+      # fetch character from game server if not existing in geo server
+      if character.nil?
+        game_server_access = GameServer::Access.new({game_server_base_url: GEO_SERVER_CONFIG['game_server_base_url']})
+        response = game_server_access.fetch_fundamental_character_self(request_access_token.token)
+        if response.code == 200
+          gs_character = response.parsed_response
+          character = Fundamental::Character.create({
+            character_id: gs_character['id'],
+            identifier:   request_access_token.identifier,
+          })
+        end
+      end
+
       character
     end
   

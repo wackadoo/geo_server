@@ -1,0 +1,51 @@
+<h1>Listing fundamental_characters</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Identifier</th>
+    <th>Deleted</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th>Location updated at</th>
+    <th>Distance today</th>
+    <th>Distance total</th>
+    <th>Premium ended at</th>
+    <th>Longitude bias</th>
+    <th>Latitude bias</th>
+    <th>Bias enabled</th>
+    <th>Privacy mode</th>
+    <th>Geo enabled</th>
+    <th>Geo setting changed at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_characters.each do |fundamental_character| %>
+  <tr>
+    <td><%= fundamental_character.character_id %></td>
+    <td><%= fundamental_character.identifier %></td>
+    <td><%= fundamental_character.deleted %></td>
+    <td><%= fundamental_character.longitude %></td>
+    <td><%= fundamental_character.latitude %></td>
+    <td><%= fundamental_character.location_updated_at %></td>
+    <td><%= fundamental_character.distance_today %></td>
+    <td><%= fundamental_character.distance_total %></td>
+    <td><%= fundamental_character.premium_ended_at %></td>
+    <td><%= fundamental_character.longitude_bias %></td>
+    <td><%= fundamental_character.latitude_bias %></td>
+    <td><%= fundamental_character.bias_enabled %></td>
+    <td><%= fundamental_character.privacy_mode %></td>
+    <td><%= fundamental_character.geo_enabled %></td>
+    <td><%= fundamental_character.geo_setting_changed_at %></td>
+    <td><%= link_to 'Show', fundamental_character %></td>
+    <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
+    <td><%= link_to 'Destroy', fundamental_character, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Character', new_fundamental_character_path %>

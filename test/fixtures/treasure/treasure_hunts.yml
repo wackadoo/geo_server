@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  category: 1
+  level: 1
+  latitude: 9.99
+  longitude: 9.99
+  difficulty: 1
+  geo_character_id: 1
+  distance: 1
+  success: false
+  treasure_id: 1
+
+two:
+  category: 1
+  level: 1
+  latitude: 9.99
+  longitude: 9.99
+  difficulty: 1
+  geo_character_id: 1
+  distance: 1
+  success: false
+  treasure_id: 1

@@ -1,0 +1,39 @@
+<h1>Listing treasure_treasure_hunts</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Level</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Difficulty</th>
+    <th>Geo character</th>
+    <th>Distance</th>
+    <th>Success</th>
+    <th>Treasure</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @treasure_treasure_hunts.each do |treasure_treasure_hunt| %>
+  <tr>
+    <td><%= treasure_treasure_hunt.category %></td>
+    <td><%= treasure_treasure_hunt.level %></td>
+    <td><%= treasure_treasure_hunt.latitude %></td>
+    <td><%= treasure_treasure_hunt.longitude %></td>
+    <td><%= treasure_treasure_hunt.difficulty %></td>
+    <td><%= treasure_treasure_hunt.geo_character_id %></td>
+    <td><%= treasure_treasure_hunt.distance %></td>
+    <td><%= treasure_treasure_hunt.success %></td>
+    <td><%= treasure_treasure_hunt.treasure_id %></td>
+    <td><%= link_to 'Show', treasure_treasure_hunt %></td>
+    <td><%= link_to 'Edit', edit_treasure_treasure_hunt_path(treasure_treasure_hunt) %></td>
+    <td><%= link_to 'Destroy', treasure_treasure_hunt, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Treasure hunt', new_treasure_treasure_hunt_path %>

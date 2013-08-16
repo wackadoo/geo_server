@@ -1,0 +1,41 @@
+<%= form_for(@fundamental_character_position) do |f| %>
+  <% if @fundamental_character_position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_character_position.errors.count, "error") %> prohibited this fundamental_character_position from being saved:</h2>
+
+      <ul>
+      <% @fundamental_character_position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :geo_character_id %><br />
+    <%= f.number_field :geo_character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :delta %><br />
+    <%= f.number_field :delta %>
+  </div>
+  <div class="field">
+    <%= f.label :suspect %><br />
+    <%= f.check_box :suspect %>
+  </div>
+  <div class="field">
+    <%= f.label :remote_ip %><br />
+    <%= f.text_field :remote_ip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Geo character:</b>
+  <%= @fundamental_daily_position_stat.geo_character_id %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%= @fundamental_daily_position_stat.distance %>
+</p>
+
+<p>
+  <b>Reports:</b>
+  <%= @fundamental_daily_position_stat.reports %>
+</p>
+
+<p>
+  <b>Max vel:</b>
+  <%= @fundamental_daily_position_stat.max_vel %>
+</p>
+
+<p>
+  <b>Geo enabled:</b>
+  <%= @fundamental_daily_position_stat.geo_enabled %>
+</p>
+
+<p>
+  <b>Suspect:</b>
+  <%= @fundamental_daily_position_stat.suspect %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_daily_position_stat_path(@fundamental_daily_position_stat) %> |
+<%= link_to 'Back', fundamental_daily_position_stats_path %>

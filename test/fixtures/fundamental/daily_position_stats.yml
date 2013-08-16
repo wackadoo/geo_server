@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  geo_character_id: 1
+  distance: 9.99
+  reports: 1
+  max_vel: 1
+  geo_enabled: false
+  suspect: false
+
+two:
+  geo_character_id: 1
+  distance: 9.99
+  reports: 1
+  max_vel: 1
+  geo_enabled: false
+  suspect: false

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Geo character:</b>
+  <%= @fundamental_character_position.geo_character_id %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @fundamental_character_position.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @fundamental_character_position.latitude %>
+</p>
+
+<p>
+  <b>Delta:</b>
+  <%= @fundamental_character_position.delta %>
+</p>
+
+<p>
+  <b>Suspect:</b>
+  <%= @fundamental_character_position.suspect %>
+</p>
+
+<p>
+  <b>Remote ip:</b>
+  <%= @fundamental_character_position.remote_ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_character_position_path(@fundamental_character_position) %> |
+<%= link_to 'Back', fundamental_character_positions_path %>

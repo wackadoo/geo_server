@@ -1,0 +1,13 @@
+<% content_for :backend_links do %> 
+ <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.fundamental.characters"), fundamental_characters_path %></li>
+    <li><%= link_to I18n.translate("application.layout.fundamental.positions"),  fundamental_character_positions_path %></li>
+    <li><%= link_to I18n.translate("application.layout.fundamental.stats"),      fundamental_daily_position_stats_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:action_content) ? yield(:action_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  identifier: MyString
+  deleted: false
+  longitude: 9.99
+  latitude: 9.99
+  location_updated_at: 2013-08-15 19:21:45
+  distance_today: 9.99
+  distance_total: 9.99
+  premium_ended_at: 2013-08-15 19:21:45
+  longitude_bias: 9.99
+  latitude_bias: 9.99
+  bias_enabled: false
+  privacy_mode: 1
+  geo_enabled: false
+  geo_setting_changed_at: 2013-08-15 19:21:45
+
+two:
+  character_id: 1
+  identifier: MyString
+  deleted: false
+  longitude: 9.99
+  latitude: 9.99
+  location_updated_at: 2013-08-15 19:21:45
+  distance_today: 9.99
+  distance_total: 9.99
+  premium_ended_at: 2013-08-15 19:21:45
+  longitude_bias: 9.99
+  latitude_bias: 9.99
+  bias_enabled: false
+  privacy_mode: 1
+  geo_enabled: false
+  geo_setting_changed_at: 2013-08-15 19:21:45
