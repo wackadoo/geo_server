@@ -10,7 +10,7 @@ module GameServer
     end
 
     def fetch_fundamental_character_self(auth_token)
-      HTTParty.get('/fundamental/characters/self', :headers => { 'Accept' => 'application/json', 'Authorization' => "Bearer #{ auth_token }"})
+      HTTParty.get(@attributes[:game_server_base_url] + '/fundamental/characters/self', :headers => { 'Accept' => 'application/json', 'Authorization' => "Bearer #{ auth_token }"})
     end
   
     protected
