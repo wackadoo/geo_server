@@ -1,28 +1,33 @@
 defaults: &defaults
   
-  base_url: 'https://wack-a-doo.de'
+  base_url:             'https://wack-a-doo.de'
+  game_server_base_url: 'https://wack-a-doo.de/game_server'
 
-  game_identifier: 'WACKADOO'
-  scope: 'wackadoo'
+  game_identifier:      'WACKADOO'
+  scope:                'wackadoo'
 
-  cookie_name: 'ge_remember_token'
+  cookie_name:          'ge_remember_token'
   
 development:
   <<: *defaults
 
-  base_url: 'https://localhost'
-  
+  base_url:             'https://localhost'
+  game_server_base_url: 'https://localhost/game_server'
+
 test:
   <<: *defaults
 
 staging:
   <<: *defaults
 
-  base_url: 'https://test1.wack-a-doo.com'
+  base_url:             'https://test1.wack-a-doo.com'
+  game_server_base_url: 'https://test1.wack-a-doo.de/game_server'
 
-  scope: 'wackadoo-testround3'
+  scope:                'wackadoo-testround3'
   
 production:
   <<: *defaults
 
-  scope: 'wackadoo-round3'
+  game_server_base_url: 'https://gs02.wack-a-doo.de/game_server'
+
+  scope:                'wackadoo-round3'

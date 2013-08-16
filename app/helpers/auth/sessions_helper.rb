@@ -1,4 +1,6 @@
 require 'five_d/access_token'
+require 'game_server/access'
+
 module Auth
   
   # Contains helpers for establishing and tracking a BACKEND session as well
@@ -135,12 +137,21 @@ module Auth
       raise BearerAuthInvalidToken.new('Access token expired.') if request_access_token.expired?
       raise BearerAuthInsufficientScope.new('Requested resource is not in authorized scope.') unless request_access_token.in_scope?(GEO_SERVER_CONFIG['scope'])
   
-      character = Fundamental::Character.find_or_create_by_identifier(request_access_token.identifier)
+      character = Fundamental::Character.find_by_identifier(request_access_token.identifier)
 
       # fetch character from game server if not existing in geo server
-      #character = Fundamental::Character.find_by_identifier(request_access_token.identifier)
+      if character.nil?
+        game_server_access = GameServer::Access.new({game_server_base_url: GEO_SERVER_CONFIG['game_server_base_url']})
+        response = game_server_access.fetch_fundamental_character_self(request_access_token)
+        if response.code == 200
+          gs_character = response.parsed_response
+          character = Fundamental::Character.create({
+            id:         gs_character['id'],
+            identifier: request_access_token.identifier,
+          })
+        end
+      end
 
-      #character.update_last_request_at   unless character.nil?
       character
     end
   

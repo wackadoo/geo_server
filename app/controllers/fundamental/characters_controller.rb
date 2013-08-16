@@ -1,7 +1,7 @@
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
 
-  before_filter :authenticate, :except => [:show, :self]
+  before_filter :authenticate, :except => [:show, :index, :self]
   before_filter :deny_api,     :except => [:show, :index, :self]
 
   # GET /fundamental/characters
@@ -18,7 +18,7 @@ class Fundamental::CharactersController < ApplicationController
   # GET /fundamental/characters/1
   # GET /fundamental/characters/1.json
   def show
-    @fundamental_character = Fundamental::Character.find(params[:id])
+    @fundamental_character = Fundamental::Character.find_by_id_or_identifier(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
