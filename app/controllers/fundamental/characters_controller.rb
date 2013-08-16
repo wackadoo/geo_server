@@ -52,11 +52,11 @@ class Fundamental::CharactersController < ApplicationController
      
      elsif !current_character.nil?
        
-        longitude = current_character.longitude
+        longitude = current_character.longitude 
         latitude  = current_character.latitude
         num       = 10
-        raise BadRequestError.new('longitude or langitude had the wrong format') if longitude.nan?
-        raise BadRequestError.new('langitude had the wrong format') if latitude.nan?
+        raise BadRequestError.new('longitude or langitude had the wrong format') if longitutde.nil? || longitude.nan?
+        raise BadRequestError.new('langitude had the wrong format') if latitude.nil? || latitude.nan?
         raise BadRequestError.new('n had the wrong format') if num <= 0
         #TODO exchange with real calc (with cos)
         whereStr = "(latitude IS NOT NULL) AND (longitude IS NOT NULL)"
