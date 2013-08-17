@@ -94,6 +94,8 @@ class Fundamental::CharactersController < ApplicationController
   # GET /fundamental/characters/1.json
   def self
     @fundamental_character = current_character
+    
+    logger.debug "CURRENT CHARACTER #{ @fundamental_character.inspect }"
 
     respond_to do |format|
       format.html # show.html.erb
