@@ -5,18 +5,17 @@ class Treasure::TreasuresController < ApplicationController
   # GET /treasure/treasures
   # GET /treasure/treasures.json
   def index
-    if (! params[:longitude].blank? && ! params[:latitude].blank?)
+    if !params[:longitude].blank? && !params[:latitude].blank?
 
       longitude = params[:longitude].to_f
       latitude = params[:latitude].to_f
       
       logger.debug("Request treasures for longitude=#{longitude}, latitude=#{latitude}")
       
-      raise BadRequestError.new('longitude or latitude had the wrong format') if longitude.nan?
-      raise BadRequestError.new('langitude had the wrong format') if latitude.nan?
+      raise BadRequestError.new('longitude had the wrong format') if longitude.nan?
+      raise BadRequestError.new('latitude had the wrong format') if latitude.nan?
 
       @treasure_treasures = Treasure::Treasure.find_or_create_in_range_of(latitude, longitude)
-
     else
       @treasure_treasures = Treasure::Treasure.all
     end
@@ -24,7 +23,7 @@ class Treasure::TreasuresController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @treasure_treasures }
-    end    
+    end
   end
 
   # GET /treasure/treasures/1

@@ -1,18 +1,13 @@
 class Treasure::Treasure < ActiveRecord::Base
   
-  
   scope :placed,      where('(latitude IS NOT NULL) AND (longitude IS NOT NULL)')
   scope :in_range_of, lambda { | lat, long, range | where(['latitude > ?) AND (latitude < ?) AND (longitude > ?) AND (longitude < ?', lat-range, lat+range, long-range, long+range]) }
-  
-  
   
   def self.find_in_range_of(latitude, longitude)
     km10 = 0.03   # TODO: replace this by a calculation of the degrees that correspond to 10km at the given location (due to the projection, it depends on position on earth)
     Treasure::Treasure.placed.in_range_of(latitude, longitude, km10)
   end
   
-
-
   def self.find_or_create_in_range_of(latitude, longitude)
     treasures = Treasure::Treasure.find_in_range_of(latitude, longitude)
   
@@ -44,10 +39,7 @@ class Treasure::Treasure < ActiveRecord::Base
     treasures = Treasure::Treasure.find_in_range_of(latitude, longitude)        
   end
   
-  
-  
   def self.place_treasure_in_range_of(latitude, longitude, range)
-    
     treasure = Treasure::Treasure.create({
       level:         rand(1..10),
       category:      rand(1..3),
@@ -55,8 +47,6 @@ class Treasure::Treasure < ActiveRecord::Base
       latitude:      latitude + (2*rand()-1) * range,
       longitude:     longitude + (2*rand()-1) * range,
     })
-
   end
-  
   
 end
