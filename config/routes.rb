@@ -9,11 +9,12 @@ GeoServer::Application.routes.draw do
       end
       
       namespace :fundamental do
+
+        match '/characters/self', :to => 'characters#self'
+
         resources :characters
         resources :daily_position_stats
         resources :character_positions
-
-        match '/characters/self', :to => 'characters#self'
       end
 
       namespace :treasure do 
