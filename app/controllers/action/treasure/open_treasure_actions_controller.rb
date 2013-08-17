@@ -1,3 +1,5 @@
+require 'mapping/util'
+
 class Action::Treasure::OpenTreasureActionsController < ApplicationController
   layout 'action'
 
