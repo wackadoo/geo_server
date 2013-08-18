@@ -145,10 +145,9 @@ module Auth
         response = game_server_access.fetch_fundamental_character_self(request_access_token.token)
         if response.code == 200
           gs_character = response.parsed_response
-          character = Fundamental::Character.create({
-            character_id: gs_character['id'],
-            identifier:   request_access_token.identifier,
-          })
+          character = Fundamental::Character.find_or_create_by_identifier(request_access_token.identifier)
+          character.character_id = gs_character['id']
+          character.save
         end
       end
 
