@@ -1,4 +1,4 @@
-require 'Util/Formula'
+require 'util/formula'
 
 class Treasure::Treasure < ActiveRecord::Base
   
