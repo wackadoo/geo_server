@@ -1,3 +1,5 @@
+require 'Util/Formula'
+
 class Treasure::Treasure < ActiveRecord::Base
   
   scope :placed,      where('(latitude IS NOT NULL) AND (longitude IS NOT NULL)')
@@ -23,30 +25,69 @@ class Treasure::Treasure < ActiveRecord::Base
       count_all += 1
     end
   
-    if count_near < 2           # at least two treasures in close range
-      (2-count_near).times do
-        Treasure::Treasure.place_treasure_in_range_of(latitude, longitude, 0.003) 
+    if count_near < 1           # at least two treasures in close range
+      (1-count_near).times do
+        Treasure::Treasure.place_treasure_in_range_of(latitude, longitude, 0.003, 2) 
         count_all += 1
       end
     end
   
-    if count_all < 15           # at least 15 treasures in long range
-      (15-count_all).times do
-        Treasure::Treasure.place_treasure_in_range_of(latitude, longitude, 0.03) 
+    if count_all < 10           # at least 15 treasures in long range
+      (10-count_all).times do
+        Treasure::Treasure.place_treasure_in_range_of(latitude, longitude, 0.03, 10) 
       end
     end
 
     treasures = Treasure::Treasure.find_in_range_of(latitude, longitude)        
   end
   
-  def self.place_treasure_in_range_of(latitude, longitude, range)
+  def self.place_treasure_in_range_of(latitude, longitude, range, max_level)
+    treasure_type = Treasure::Treasure.random_treasure_type
+
+    max = 10
+    level_mass = ((max+1)*max) / 2.0   # p(level=1) = max, p(l=2) = max-1,  p(max) = 1  where p is the probability weight (not normalized)
+    
+    x = rand(level_mass)
+    
+    level = 1
+    (1..max).each do |v|
+      if x >= 0
+        level = v
+      end
+      x -= max-(v-1);
+    end
+    
+    difficulty = Util::Formula.parse_from_formula(treasure_type[:difficulty]).apply(level)
+
     treasure = Treasure::Treasure.create({
-      level:         rand(1..10),
-      category:      rand(1..3),
-      difficulty:    rand(1..100),
+      level:         level,
+      category:      treasure_type[:id],
+      difficulty:    difficulty,
+      
       latitude:      latitude + (2*rand()-1) * range,
       longitude:     longitude + (2*rand()-1) * range,
     })
+  end
+  
+  # draws a random treasure from the list of all treasure types
+  # using the probabiltity factors to determine the selection
+  # probability of each individual type.
+  def self.random_treasure_type
+    treasure_types = GameRules::Rules.the_rules.treasure_types
+  
+    p_mass   = 0
+    treasure_types.each { |treasure| p_mass += treasure[:probability_factor].to_i }
+    treasure = nil
+    random_number = rand(p_mass)
+    
+    treasure_types.each do |t|
+      if random_number >= 0
+        treasure = t
+      end
+      random_number -= t[:probability_factor]
+    end
+    
+    treasure
   end
   
 end
