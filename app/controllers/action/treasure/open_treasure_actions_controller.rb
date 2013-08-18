@@ -13,6 +13,8 @@ class Action::Treasure::OpenTreasureActionsController < ApplicationController
     @treasure = Treasure::Treasure.find_by_id(params[:open_treasure_action][:id])
     raise NotFoundError.new('Treasure Not Found') if @treasure.nil?
 
+    logger.debug "#{current_character.latitude} #{current_character.longitude} #{@treasure.latitude} #{@treasure.longitude} "
+
     distance = Mapping::Util.map_distance(current_character.latitude, current_character.longitude, @treasure.latitude, @treasure.longitude)
                              
     logger.debug "trying to grab treasure #{ @treasure.id } in #{ distance }km distance of character #{ current_character.identifier }"

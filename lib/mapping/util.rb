@@ -15,7 +15,7 @@ module Mapping
         
       return Math.acos(Math.sin(lat1r)*Math.sin(lat2r) +       # using the most simple formula. the result's precision highly depends on float's precision
                        Math.cos(lat1r)*Math.cos(lat2r) *
-                       Math.cos(lon2r-lon1r)) * radius_earth ;
+                       Math.cos(lon2r-lon1r)) * radius_earth
     
     end
   end
