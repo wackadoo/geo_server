@@ -69,8 +69,10 @@ class Fundamental::CharactersController < ApplicationController
           #end
           @fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num)
         end
+     elsif staff? || admin?
+       @fundamental_characters = Fundamental::Character.all
      else
-       @fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated
+       raise ForbiddenError.new('no rights')
      end
 
     respond_to do |format|
