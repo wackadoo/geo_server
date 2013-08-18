@@ -70,7 +70,8 @@ class Fundamental::CharactersController < ApplicationController
           @fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num)
         end
      elsif staff? || admin?
-       @fundamental_characters = Fundamental::Character.all
+       @fundamental_characters = Fundamental::Character.paginate(:order => 'location_updated_at desc', :page => params[:page], :per_page => 20)
+       @paginate = true
      else
        raise ForbiddenError.new('no rights')
      end
