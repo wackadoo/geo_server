@@ -15,7 +15,7 @@ class Treasure::TreasuresController < ApplicationController
       raise BadRequestError.new('longitude had the wrong format') if longitude.nan?
       raise BadRequestError.new('latitude had the wrong format') if latitude.nan?
 
-      @treasure_treasures = Treasure::Treasure.find_or_create_in_range_of(latitude, longitude)
+      @treasure_treasures = Treasure::Treasure.all # find_or_create_in_range_of(latitude, longitude)
     else
       @treasure_treasures = Treasure::Treasure.all
     end
