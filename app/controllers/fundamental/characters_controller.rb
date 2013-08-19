@@ -81,7 +81,8 @@ class Fundamental::CharactersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: {@fundamental_characters }}
+      format.json { render json: @fundamental_characters }
+
     end
   end
 
