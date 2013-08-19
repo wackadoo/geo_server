@@ -27,7 +27,7 @@ class Fundamental::CharactersController < ApplicationController
        #   whereStr += " AND user_id != :userid"
        #  whereHash[:userid] = current_user.id;
        #end
-       @fundamental_characters = Fundamental::Character.with_lat_and_long.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num);
+       @fundamental_characters = Fundamental::Character.with_lat_and_long #.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num);
        #@fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num);
 
      elsif params.has_key?(:longitude) && params.has_key?(:latitude) && params.has_key?(:range)
@@ -43,7 +43,7 @@ class Fundamental::CharactersController < ApplicationController
        #   whereStr += " AND user_id != :userid"
        #   whereHash[:userid] = current_user.id;
        # end
-       @fundamental_characters = Fundamental::Character.with_lat_and_long.where(where_str, where_hash)
+       @fundamental_characters = Fundamental::Character.with_lat_and_long #.where(where_str, where_hash)
        #@fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated.where(where_str, where_hash)
 
      elsif params.has_key?(:longitude) || params.has_key?(:latitude) || params.has_key?(:range) || params.has_key?(:n)
@@ -60,7 +60,7 @@ class Fundamental::CharactersController < ApplicationController
         raise BadRequestError.new('n had the wrong format') if num <= 0
 
         if longitude.nil? || longitude.nan? || latitude.nil? || latitude.nan?
-          @fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated.limit(num)
+          @fundamental_characters = Fundamental::Character.with_lat_and_long #.recently_updated.limit(num)
         else
           #TODO exchange with real calc (with cos)
           where_str = "(latitude IS NOT NULL) AND (longitude IS NOT NULL)"
@@ -69,7 +69,7 @@ class Fundamental::CharactersController < ApplicationController
           #   whereStr += " AND user_id != :userid"
           #  whereHash[:userid] = current_user.id;
           #end
-          @fundamental_characters = Fundamental::Character.with_lat_and_long.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num)
+          @fundamental_characters = Fundamental::Character.with_lat_and_long #.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num)
           #@fundamental_characters = Fundamental::Character.with_lat_and_long.recently_updated.where(where_str, where_hash).order("(((longitude- #{longitude})*(longitude- #{longitude})) + ((latitude- #{latitude})*(latitude- #{latitude}))) ASC").limit(num)
         end
      elsif staff? || admin?
