@@ -19,7 +19,7 @@ class Action::Treasure::OpenTreasureActionsController < ApplicationController
                              
     logger.debug "trying to grab treasure #{ @treasure.id } in #{ distance }km distance of character #{ current_character.identifier }"
                          
-    if distance < 0.2  # 200 m distance is ok
+    if distance < -0.2  # 200 m distance is ok
       @treasure.destroy
       head :ok
     else 
