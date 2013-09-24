@@ -2,6 +2,10 @@ class Treasure::TreasuresController < ApplicationController
 
   layout 'treasure'
 
+  before_filter :authenticate, :except => [:show, :index]
+  before_filter :deny_api,     :except => [:show, :index]
+
+
   # GET /treasure/treasures
   # GET /treasure/treasures.json
   def index
@@ -16,8 +20,10 @@ class Treasure::TreasuresController < ApplicationController
       raise BadRequestError.new('latitude had the wrong format') if latitude.nan?
 
       @treasure_treasures = Treasure::Treasure.find_or_create_in_range_of(latitude, longitude)
-    else
+    elsif admin? || staff?
       @treasure_treasures = Treasure::Treasure.all
+    else
+      raise ForbiddenError.new("unrestricted access to index forbidden")
     end
 
     respond_to do |format|
