@@ -30,6 +30,6 @@ staging:
 production:
   <<: *defaults
 
-  game_server_base_url: 'https://gs05.wack-a-doo.de/game_server'
+  game_server_base_url: 'https://gs06.wack-a-doo.de/game_server'
 
-  scope:                'wackadoo-round5'
+  scope:                'wackadoo-round6'
